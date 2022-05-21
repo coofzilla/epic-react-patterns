@@ -45,6 +45,7 @@ const decrement = dispatch => dispatch({type: 'decrement'})
 
 function Counter() {
   const [state, dispatch] = useCounter()
+
   return (
     <div>
       <div>Current Count: {state.count}</div>

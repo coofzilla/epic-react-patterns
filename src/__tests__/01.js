@@ -9,7 +9,7 @@ import userEvent from '@testing-library/user-event'
 import * as userClient from '../user-client'
 import {AuthProvider} from '../auth-context'
 import App from '../final/01'
-// import App from '../exercise/01'
+// // import App from '../exercise/01'
 
 jest.mock('../user-client', () => {
   return {updateUser: jest.fn(() => Promise.resolve())}
