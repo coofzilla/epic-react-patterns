@@ -40,9 +40,6 @@ function App() {
           onClick: () => console.info('onButtonClick'),
           id: 'custom-button-id',
         })}
-        // aria-label="custom-button"
-        // {...togglerProps}
-        // onClick={() => console.log('onButtonClick')}
       >
         {on ? 'on' : 'off'}
       </button>
