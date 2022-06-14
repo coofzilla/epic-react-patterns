@@ -5,21 +5,27 @@
 import * as React from 'react'
 import {Switch} from '../switch'
 
-const callAll = (...fns) => (...args) => fns.forEach(fn => fn?.(...args))
+const callAll =
+  (...fns) =>
+  (...args) =>
+    fns.forEach(fn => fn?.(...args))
 
 function useToggle() {
   const [on, setOn] = React.useState(false)
+  const [another, setAnother] = React.useState('blah')
   const toggle = () => setOn(!on)
-
+  //invoking and spreading the return value
   function getTogglerProps({onClick, ...props} = {}) {
     return {
       'aria-pressed': on,
       onClick: callAll(onClick, toggle),
+      title: 'title',
       ...props,
     }
   }
 
   return {
+    another,
     on,
     toggle,
     getTogglerProps,
@@ -27,10 +33,10 @@ function useToggle() {
 }
 
 function App() {
-  const {on, getTogglerProps} = useToggle()
+  const {on, getTogglerProps, another} = useToggle()
   return (
     <div>
-      <Switch {...getTogglerProps({on})} />
+      <Switch {...getTogglerProps({on, another})} />
       <hr />
       <button
         {...getTogglerProps({

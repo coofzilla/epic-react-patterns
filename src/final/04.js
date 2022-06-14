@@ -4,7 +4,7 @@
 import * as React from 'react'
 import {Switch} from '../switch'
 
-function useToggle() {
+function useToggle(title) {
   const [on, setOn] = React.useState(false)
   const toggle = () => setOn(!on)
 
@@ -14,6 +14,8 @@ function useToggle() {
     togglerProps: {
       'aria-pressed': on,
       onClick: toggle,
+      title,
+      data: 'thingy',
     },
   }
 }
