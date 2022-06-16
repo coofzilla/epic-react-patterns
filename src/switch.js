@@ -19,13 +19,12 @@ class Switch extends React.Component {
       on,
       className = '',
       'aria-label': ariaLabel,
-      another = 'thingy',
+
       onClick,
-      testFunction = () => console.log(another),
+
       ...props
     } = this.props
 
-    testFunction()
     const btnClassName = [
       className,
       'toggle-btn',
