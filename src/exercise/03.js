@@ -7,14 +7,14 @@ import {Switch} from '../switch'
 const ToggleContext = React.createContext()
 ToggleContext.displayName = 'ToggleContext'
 
-function Toggle({children}) {
+function Toggle(props) {
   const [on, setOn] = React.useState(false)
   const toggle = () => setOn(!on)
 
   return (
-    <ToggleContext.Provider value={{on, toggle}}>
-      {children}
-    </ToggleContext.Provider>
+    <ToggleContext.Provider value={{on, toggle}} {...props} />
+    //   {children}
+    // </ToggleContext.Provider>
   )
 }
 
